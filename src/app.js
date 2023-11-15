@@ -11,9 +11,10 @@ const io = new SocketIOServer(server);
 //rutas
 app.use('/',router);
 //donde vamos a cargar los html con los que vamos a trabajar.
-// app.use(express.static('./src/public'))
+
 app.set('view engine','pug'); //especificando el tipo de engine que es pug
 app.set('views','./src/public'); // especificando que carpeta será la de vistas
+app.use(express.static('./src/styles'))
 
 
 io.on('connection',(socket)=>{

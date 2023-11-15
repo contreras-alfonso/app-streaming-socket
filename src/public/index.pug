@@ -3,10 +3,11 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   script(src='socket.io/socket.io.js')
+  script(src='https://cdn.tailwindcss.com')
   title Emitir el video a visualizar
-h1 Emision en directo
-button#btn Emitir
-video#video(src='' autoplay='' style='width: 800px; height: 600px;')
+h1(class="text-6xl") Emitir en directo
+button#btn(class="border border-dashed border-gray-700 py-5 rounded-lg hover:bg-gray-700 hover:text-white duration-300 font-bold w-full my-10") Emitir
+video#video(src='' class="bg-black" autoplay='' style='width: 800px; height: 600px;')
 canvas#preview
 .status
 script.
@@ -40,5 +41,5 @@ script.
   }
   var intervalo = setInterval(() => {
   verVideo(video,context);
-  }, 500);
+  }, 100);
   })
