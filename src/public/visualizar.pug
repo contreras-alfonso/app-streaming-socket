@@ -1,0 +1,13 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  script(src='socket.io/socket.io.js')
+  title Visualizamos la emisi&oacute;n en directo
+img#play(src='' alt='')
+script.
+  var socket = io();
+  socket.on('stream',(image)=>{
+  let img = document.getElementById('play');
+  img.src = image;
+  })
